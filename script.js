@@ -82,7 +82,7 @@ const saveToWhatsappFunc = function (total) {
       const totalAmount = `#${updateUI()}`;
       console.log(totalAmount);
       const checkWhatsappNumber = +whatsappNumInput;
-      const rawMsg = `*SAVED AMOUNT FOR ${theDay} is* : ${totalAmount}`;
+      const rawMsg = `SAVED AMOUNT FOR *${theDay}* is : ${totalAmount}`;
       const encodeMsg = encodeURIComponent(rawMsg);
 
       window.location.href = `https://api.whatsapp.com/send?phone=234${checkWhatsappNumber}&text=${encodeMsg}`;
