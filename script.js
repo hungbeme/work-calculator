@@ -82,8 +82,13 @@ const saveToWhatsappFunc = function (total) {
       const totalAmount = `#${updateUI()}`;
       console.log(totalAmount);
       const checkWhatsappNumber = +whatsappNumInput;
+      const rawMsg = `*SAVED AMOUNT FOR ${theDay} is* : ${totalAmount}`;
+      const encodeMsg = encodeURIComponent(rawMsg);
 
-      window.location.href = `https://api.whatsapp.com/send?phone=234${checkWhatsappNumber}&text=*SAVED AMOUNT FOR ${theDay} is*:%20${totalAmount}%20`;
+      window.location.href = `https://api.whatsapp.com/send?phone=234${checkWhatsappNumber}&text=${encodeMsg}`;
+
+      //   https://api.whatsapp.com/send?phone=2349137746866&text=Name:%20${inputElValue}%20email:%20${emalElValue}%20phone:%20${phoneElValue}%20and%20message:%20${messageElValue}%20`;
+      //   }
     }
   });
 
