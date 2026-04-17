@@ -92,5 +92,3 @@ const saveToWhatsappFunc = function (total) {
     whatsappDivEl.classList.add("hidden");
   });
 };
-
-saveToWhatsappFunc();
