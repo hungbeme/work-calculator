@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Track your daily earnings effortlessly with the Work Calculator. Monitor your total progress, save data securely, and export your stats to WhatsApp in seconds."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+
+    <title>Work Calculator</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Welcome to work Calculator</h1>
+
+      <div>
+        <div class="dateDiv">
+          <p>Enter your work amount for Today</p>
+          <p class="todayDate">12/12/2000</p>
+        </div>
+
+        <div class="saveDiv">
+          <div>
+            <label for="amount">Enter Amount</label>
+            <input type="number" id="amount" class="input" />
+          </div>
+          <button class="saveAmountButton">SAVE</button>
+        </div>
+
+        <p class="message">
+          You have made <span class="totalMessage">#0</span> in total
+        </p>
+      </div>
+    </div>
+
+    <!-- WHATSAPP SEND MESSAGE SECTION -->
+    <div class="whatsappDiv hidden">
+      <div class="overlay"></div>
+      <div class="whatsappMessage">
+        <ion-icon class="closeBtn" name="close-outline"></ion-icon>
+        <h2>Save your progress to whatsapp to avoid Data Loss.</h2>
+
+        <div class="saveDiv">
+          <label for="number">Enter Your Whatsapp Number</label>
+          <input type="tel" id="number" class="whatsappNum" />
+          <p class="errMessage hidden">Message Error</p>
+          <button class="saveWhatsappNumButton">Save to whatsapp</button>
+        </div>
+
+        <div class="note">
+          <p>
+            1. Make sure you have the whatsapp app installed on your device!!!!
+          </p>
+          <p>
+            2. Saving data to whatsapp will take a few seconds, PLEASE BE
+            PATIENT!!!!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
