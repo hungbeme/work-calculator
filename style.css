@@ -58,6 +58,10 @@ button {
   font-size: 22px;
 }
 
+.comtactDev{
+  margin-top : 100px;
+}
+
 a:link, a:visited{
   text-align:center;
   color: black; 
