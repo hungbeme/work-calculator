@@ -58,6 +58,12 @@ button {
   font-size: 22px;
 }
 
+.contactDev:link, .contactDev:visited{
+  text-align:center;
+  color: black; 
+  
+}
+
 /* SHOW DEVELOPER TAB+ */
 .hidden,
 .hidden {
