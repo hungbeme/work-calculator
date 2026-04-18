@@ -58,7 +58,7 @@ button {
   font-size: 22px;
 }
 
-.contactDev:link, .contactDev:visited{
+a:link, a:visited{
   text-align:center;
   color: black; 
   
