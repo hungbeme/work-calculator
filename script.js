@@ -9,6 +9,7 @@ const whatsappDivEl = document.querySelector(".whatsappDiv");
 const closeBtnEl = document.querySelector(".closeBtn");
 const whatsappNumsaveBtn = document.querySelector(".saveWhatsappNumButton");
 const errMsg = document.querySelector(".errMessage");
+const resetBtnEl = document.querySelector(".resetBtn")
 
 // CREATING THE TODAY'S DATE
 
@@ -57,6 +58,25 @@ btnEl.addEventListener("click", function (e) {
   inputValue.value = "";
   saveToWhatsappFunc();
 });
+
+// RESETTING THE DATA
+resetBtnEl.addEventListener("click", function () {
+  // Ask for confirmation so they don't lose data by mistake
+  const confirmReset = confirm("Are you sure you want to delete all saved work amounts?");
+
+  if (confirmReset) {
+    // A. Clear LocalStorage
+    localStorage.removeItem("inputValue");
+
+    // B. Clear the Array in the code
+    arr = [];
+
+    // C. Update the UI to show 0
+    updateUI();
+  }
+});
+
+
 
 // SAVE TO WHATSAPP FUNCTIONALITY
 
