@@ -78,9 +78,8 @@ const saveToWhatsappFunc = function (total) {
       errMsg.textContent = "Invalid number! Please enter 11 digit";
       return;
     } else {
-      console.log(whatsappNumInput);
       const totalAmount = `#${updateUI()}`;
-      console.log(totalAmount);
+    
       const checkWhatsappNumber = +whatsappNumInput;
       const rawMsg = `SAVED AMOUNT FOR *${theDay}* is : ${totalAmount}`;
       const encodeMsg = encodeURIComponent(rawMsg);
