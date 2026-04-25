@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="title" content="The Work Calculator" />
+
     <meta
       name="description"
       content="Track your daily earnings effortlessly with the Work Calculator. Monitor your total progress, save data securely, and export your stats to WhatsApp in seconds."
     />
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="workCalc-Img.jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,24 +26,54 @@
   <body>
     <div class="main">
       <h1>Welcome to work Calculator</h1>
-
-      <div>
-        <div class="dateDiv">
-          <p>Enter your work amount for Today</p>
-          <p class="todayDate">12/12/2000</p>
-        </div>
-
-        <div class="saveDiv">
-          <div>
-            <label for="amount">Enter Amount</label>
-            <input type="number" id="amount" class="input" />
+      <div class="inputdataList-div">
+        <!-- INPUT CONTAINER -->
+        <div>
+          <div class="dateDiv">
+            <p>Enter your work amount for Today</p>
+            <p class="todayDate">12/12/2000</p>
           </div>
-          <button class="saveAmountButton">SAVE</button>
+
+          <div class="saveDiv">
+            <div>
+              <label for="amount">Enter Amount</label>
+              <input type="number" id="amount" class="input" />
+            </div>
+            <button class="saveAmountButton">SAVE</button>
+          </div>
+
+          <p class="message">
+            You have made <span class="totalMessage">#0</span> in total
+          </p>
+          <!-- RESET DATA BUTTON -->
+          <button class="resetBtn">RESET ALL DATA</button>
+
+          <!-- SHOW DATA LIST -->
+          <button class="listBtn">SHOW DATA LIST</button>
         </div>
 
-        <p class="message">
-          You have made <span class="totalMessage">#0</span> in total
-        </p>
+        <!-- DATA LIST -->
+        <ul class="listUl">
+          <!-- <li>
+            <p class="dayText">THE DAY</p>
+            <p class="amountText"># 1000</p>
+          </li>
+          <li>
+            <p class="dayText">THE DAY</p>
+            <p class="amountText"># 1000</p>
+          </li>
+          <li>
+            <p class="dayText">THE DAY</p>
+            <p class="amountText"># 1000</p>
+          </li> -->
+        </ul>
+      </div>
+
+      <!-- CONTACT DEVELOPER -->
+      <div class="comtactDev">
+        <a href="https://my-portfolio-eta-pink-71.vercel.app/">
+          Contact the developer for any complaints or suggestions
+        </a>
       </div>
     </div>
 

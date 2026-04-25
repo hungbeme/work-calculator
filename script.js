@@ -1,6 +1,9 @@
 "use script";
 
+/////////////////////////////////////////////////
 // SELECTING ELEMENTS
+/////////////////////////////////////////////////
+
 const inputDate = document.querySelector(".todayDate");
 const inputValue = document.querySelector(".input");
 const btnEl = document.querySelector(".saveAmountButton");
@@ -9,47 +12,88 @@ const whatsappDivEl = document.querySelector(".whatsappDiv");
 const closeBtnEl = document.querySelector(".closeBtn");
 const whatsappNumsaveBtn = document.querySelector(".saveWhatsappNumButton");
 const errMsg = document.querySelector(".errMessage");
+const resetBtnEl = document.querySelector(".resetBtn");
+// const dayTextEl = document.querySelector(".dayText");
+// const amountTextEl = document.querySelector(".amountText");
+const listUlEl = document.querySelector(".listUl");
+const listBtn = document.querySelector(".listBtn");
 
+/////////////////////////////////////////////////
 // CREATING THE TODAY'S DATE
+/////////////////////////////////////////////////
 
 const theDay = new Date().toDateString();
 inputDate.textContent = theDay;
 
+/////////////////////////////////////////////////
 // STARTING ARRAY
+/////////////////////////////////////////////////
 
 let arr = JSON.parse(localStorage.getItem("inputValue")) || [];
-//   console.log("arr 1", arr);
+let arr2 = JSON.parse(localStorage.getItem("listValue")) || [];
 
+// LIST BTN FUNCTIONALITY
+listBtn.addEventListener("click", function () {
+  listUlEl.innerHTML = "";
+  listFunc();
+});
+
+const listFunc = function () {
+  arr2.forEach((val) => {
+    const listHtml = ` 
+          <li>
+            <p class="dayText">${val.theDay}</p>
+            <p class="amountText">#${val.inputedValue.toLocaleString()}</p>
+          </li>
+          
+          `;
+
+    listUlEl.insertAdjacentHTML("afterbegin", listHtml);
+  });
+};
+
+/////////////////////////////////////////////////
 //   UPDATING THE UI
+/////////////////////////////////////////////////
 
 const updateUI = function () {
   if (arr.length > 0) {
     const total = arr.reduce(function (acc, cur, i, arr) {
       return acc + cur;
     }, 0);
-
-    //   console.log(total);
-    totalMessageVal.textContent = `#${total}`;
+    totalMessageVal.textContent = `#${total.toLocaleString()}`;
     return total;
   } else {
     totalMessageVal.textContent = `#0`;
   }
 };
-
 updateUI();
 
+/////////////////////////////////////////////////
 //   INITIALIZING BUTTON FUNCTIONALITY
+/////////////////////////////////////////////////
 
 btnEl.addEventListener("click", function (e) {
   e.preventDefault();
 
+  listUlEl.innerHTML = "";
+
   const inputedValue = +inputValue.value;
 
-  if (!inputedValue) return;
+  if (!inputedValue || inputedValue === 0) return;
 
   // ADD VALUE TO ARR
   arr.push(inputedValue);
 
+  /////////////////////////////////////////////////
+  /////// SETTING THE LIST FUNCTIONALITY ///////
+  /////////////////////////////////////////////////
+  arr2.push({ theDay, inputedValue });
+
+  localStorage.setItem("listValue", JSON.stringify(arr2));
+  listFunc();
+
+  // SAVING THE INPUTED VALUE TO LOCAL STORAGE
   localStorage.setItem("inputValue", JSON.stringify(arr));
 
   // UPDATE UI AND CLEAR INPUT
@@ -58,7 +102,36 @@ btnEl.addEventListener("click", function (e) {
   saveToWhatsappFunc();
 });
 
+/////////////////////////////////////////////////
+// RESETTING THE DATA
+/////////////////////////////////////////////////
+
+resetBtnEl.addEventListener("click", function () {
+  // Ask for confirmation so they don't lose data by mistake
+  const confirmReset = confirm(
+    "Are you sure you want to delete all saved work amounts?",
+  );
+
+  if (confirmReset) {
+    // A. Clear LocalStorage
+    localStorage.removeItem("inputValue");
+    localStorage.removeItem("listValue");
+
+    // B. Clear the Array in the code
+    arr = [];
+    arr2 = [];
+
+    // Clear List
+    listUlEl.innerHTML = "";
+
+    // C. Update the UI to show 0
+    updateUI();
+  }
+});
+
+/////////////////////////////////////////////////
 // SAVE TO WHATSAPP FUNCTIONALITY
+/////////////////////////////////////////////////
 
 const saveToWhatsappFunc = function (total) {
   // REMOVE HIDDEN CLASS
@@ -71,24 +144,19 @@ const saveToWhatsappFunc = function (total) {
     const whatsappNumInput = document.querySelector(".whatsappNum").value;
 
     // CHECK THE VALUE OF INPUTTED NUMBER
-    // console.log(checkWhatsappNumber.length);
-
     if (whatsappNumInput.length < 10 || whatsappNumInput.length > 13) {
       errMsg.classList.remove("hidden");
       errMsg.textContent = "Invalid number! Please enter 11 digit";
       return;
     } else {
       console.log(whatsappNumInput);
-      const totalAmount = `#${updateUI()}`;
+      const totalAmount = `#${updateUI().toLocaleString()}`;
       console.log(totalAmount);
       const checkWhatsappNumber = +whatsappNumInput;
       const rawMsg = `SAVED AMOUNT FOR *${theDay}* is : ${totalAmount}`;
       const encodeMsg = encodeURIComponent(rawMsg);
 
       window.location.href = `https://api.whatsapp.com/send?phone=234${checkWhatsappNumber}&text=${encodeMsg}`;
-
-      //   https://api.whatsapp.com/send?phone=2349137746866&text=Name:%20${inputElValue}%20email:%20${emalElValue}%20phone:%20${phoneElValue}%20and%20message:%20${messageElValue}%20`;
-      //   }
     }
   });
 
