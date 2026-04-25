@@ -58,10 +58,6 @@ button {
   font-size: 22px;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9798d769cc3f87915ec6a9090a2e1d721eccd093
 .resetBtn {
   background-color: #ef4444;
   margin-top: 20px;
@@ -78,7 +74,6 @@ button {
   background-color: #dc2626;
 }
 
-<<<<<<< HEAD
 ul {
   list-style: none;
   margin-top: 40px;
@@ -117,16 +112,16 @@ a:link,
 a:visited {
   text-align: center;
   color: black;
-=======
-.comtactDev{
-  margin-top : 200px;
 }
 
-a:link, a:visited{
-  text-align:center;
-  color: black; 
-  
->>>>>>> 9798d769cc3f87915ec6a9090a2e1d721eccd093
+.comtactDev {
+  margin-top: 200px;
+}
+
+a:link,
+a:visited {
+  text-align: center;
+  color: black;
 }
 
 /* SHOW DEVELOPER TAB+ */

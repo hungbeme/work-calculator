@@ -12,6 +12,9 @@ const whatsappDivEl = document.querySelector(".whatsappDiv");
 const closeBtnEl = document.querySelector(".closeBtn");
 const whatsappNumsaveBtn = document.querySelector(".saveWhatsappNumButton");
 const errMsg = document.querySelector(".errMessage");
+const resetBtnEl = document.querySelector(".resetBtn");
+const listUlEl = document.querySelector(".listUl");
+const listBtn = document.querySelector(".listBtn");
 
 /////////////////////////////////////////////////
 // CREATING THE TODAY'S DATE
@@ -29,6 +32,11 @@ let arr2 = JSON.parse(localStorage.getItem("listValue")) || [];
 
 // LIST BTN FUNCTIONALITY
 listBtn.addEventListener("click", function () {
+  if (arr2.length === 0) {
+    alert("List is currently empty! Add amounts to show list");
+    return;
+  }
+
   listUlEl.innerHTML = "";
   listFunc();
 });
@@ -95,25 +103,6 @@ btnEl.addEventListener("click", function (e) {
   updateUI();
   inputValue.value = "";
   saveToWhatsappFunc();
-});
-
-// RESETTING THE DATA
-resetBtnEl.addEventListener("click", function () {
-  // Ask for confirmation so they don't lose data by mistake
-  const confirmReset = confirm(
-    "Are you sure you want to delete all saved work amounts?",
-  );
-
-  if (confirmReset) {
-    // A. Clear LocalStorage
-    localStorage.removeItem("inputValue");
-
-    // B. Clear the Array in the code
-    arr = [];
-
-    // C. Update the UI to show 0
-    updateUI();
-  }
 });
 
 /////////////////////////////////////////////////
