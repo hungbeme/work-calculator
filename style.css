@@ -9,7 +9,7 @@
   --section-colors: #ffff;
   --headlines-color: #00236f;
   --low-text-color: #757682;
-  --lower-text-color: #9c9da27d;
+  --lower-text-color: #757682;
   --money-color: #006e2f;
   --earning-background: #eff4ff;
 }
@@ -30,12 +30,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 0.5px solid #cbdbf5;
-  padding: 24px 12px;
-  margin-bottom: 32px;
+  border-bottom: 0.0313rem solid #cbdbf5;
+  padding: 1.5rem 0.75rem;
+  margin-bottom: 2rem;
   color: var(--headlines-color);
   font-weight: 900;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 header span {
@@ -56,15 +56,15 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 12px;
-  gap: 32px;
+  padding: 0.75rem;
+  gap: 5rem;
 }
 
 .section {
   background-color: var(--section-colors);
-  border: 1px solid #c5c5d3;
-  border-radius: 8px;
-  padding: 24px 12px;
+  border: 0.0625rem solid #c5c5d3;
+  border-radius: 0.5rem;
+  padding: 1.5rem 0.75rem;
   width: 100%;
 }
 
@@ -72,16 +72,16 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   color: var(--headlines-color);
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .calculator-icon {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .unit-div,
@@ -89,33 +89,33 @@ h2 {
   display: flex;
   flex-direction: column;
   text-align: start;
-  gap: 4px;
-  margin-bottom: 12px;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
   /* color: var(--low-text-color); */
 }
 
 #unit-input,
 #amount-input {
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid var(--lower-text-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--lower-text-color);
 }
 
 .earningDiv {
-  margin: 24px 0;
-  padding: 20px 32px;
+  margin: 1.5rem 0;
+  padding: 1.25rem 2rem;
   background-color: #eff4ff;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 
 .earningtext {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--headlines-color);
   font-weight: 600;
 }
 
 .totalDayEarning {
-  font-size: 32px;
+  font-size: 2rem;
   color: #006e2f;
   font-weight: 900;
 }
@@ -124,50 +124,50 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .saveAmountButton {
   width: 100%;
-  padding: 8px 16px;
-  border: 1px solid var(--lower-text-color);
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem solid var(--lower-text-color);
+  border-radius: 0.5rem;
   background-color: var(--headlines-color);
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
 }
 
 .resetBtn {
   width: 100%;
-  padding: 8px 16px;
+  padding: 0.5rem 1rem;
   background: none;
-  border: 1px solid var(--lower-text-color);
-  border-radius: 8px;
+  border: 0.0625rem solid var(--lower-text-color);
+  border-radius: 0.5rem;
 }
 
 /* CURRENT SESSION SECTION */
 
 .currentSession {
   background-color: #fff;
-  border: 1px solid var(--lower-text-color);
-  border-radius: 8px;
+  border: 0.0625rem solid var(--lower-text-color);
+  border-radius: 0.5rem;
   width: 100%;
   overflow: hidden;
 }
 
 .currentSessionHeadline {
   text-align: left;
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   background-color: var(--headlines-color);
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #fff;
 }
 
 .currentSessionBody {
-  padding: 16px 12px;
+  padding: 1rem 0.75rem;
 }
 
 .sessionDiv {
@@ -175,46 +175,46 @@ h2 {
   justify-content: space-between;
   align-items: center;
   text-align: start;
-  padding-bottom: 16px;
-  border-bottom: 1px solid black;
+  padding-bottom: 1rem;
+  border-bottom: 0.0625rem solid black;
 }
 
 .date,
 .unit {
-  font-size: 12px;
-  margin-bottom: 4px;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
   color: var(--low-text-color);
 }
 
 .todayDate,
 .totalunits {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .saveRecord-div {
   display: flex;
-  padding-top: 16px;
+  padding-top: 1rem;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .numAmount {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--money-color);
   font-weight: 700;
 }
 
 .saveRecordBtn {
   width: 100%;
-  padding: 12px;
+  padding: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
   background-color: var(--money-color);
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: #fff;
   font-weight: 600;
 }
@@ -228,15 +228,15 @@ h2 {
 }
 
 .totalMonthlyAmount {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--headlines-color);
 }
 
 .calender-icon {
-  font-size: 24px;
+  font-size: 1.5rem;
   background-color: var(--lower-text-color);
   color: var(--headlines-color);
-  padding: 12px;
+  padding: 0.75rem;
   border-radius: 100%;
 }
 
@@ -245,17 +245,17 @@ h2 {
 .howitworks-Header {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 32px;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
   /* text-align: center;
   justify-content: center; */
 }
 
 .alert-icon {
-  font-size: 16px;
+  font-size: 1rem;
   background-color: var(--headlines-color);
   color: #fff;
-  padding: 4px;
+  padding: 0.25rem;
   border-radius: 100%;
 }
 
@@ -268,18 +268,18 @@ ol {
   display: flex;
   flex-direction: column;
   text-align: start;
-  gap: 16px;
+  gap: 1rem;
 }
 
 li div {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: 0.625rem;
+  margin-bottom: 0.5rem;
 }
 
 .num-icon {
-  padding: 3px 8px;
+  padding: 0.1875rem 0.5rem;
   background-color: var(--headlines-color);
   border-radius: 100%;
   color: #fff;
@@ -291,14 +291,14 @@ li div {
 
 /* HISTORY SECTION */
 .history {
-  padding: 24px 0 0 0 !important;
+  padding: 1.5rem 0 0 0 !important;
 }
 
 .historyHeadline p {
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: start;
-  margin-bottom: 24px;
-  padding: 0 16px;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
   color: var(--headlines-color);
   font-weight: 800;
 }
@@ -306,7 +306,7 @@ li div {
 .historyTable {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .historyTableHead {
@@ -314,23 +314,23 @@ li div {
   justify-content: space-between;
   align-items: center;
   background-color: var(--lower-text-color);
-  padding: 8px 12px;
-  gap: 24px;
+  padding: 0.5rem 0.75rem;
+  gap: 1.5rem;
 }
 
 .historyTableHead p {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .historyTableBody:not(:last-child) {
-  border-bottom: 1px solid var(--lower-text-color);
+  border-bottom: 0.0625rem solid var(--lower-text-color);
 }
 .historyTableBody {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 12px;
-  gap: 10px;
+  padding: 0.75rem 0.75rem;
+  gap: 0.625rem;
 }
 
 /* SHOW DEVELOPER TAB+ */
@@ -348,11 +348,11 @@ li div {
   z-index: 101;
   gap: 1.5rem;
   width: 90%;
-  max-width: 400px;
-  border-radius: 8px;
+  max-width: 25rem;
+  border-radius: 0.5rem;
   background-color: #fff;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  padding: 32px 18px 0 18px;
+  box-shadow: 0 0.625rem 1.5625rem rgba(0, 0, 0, 0.2);
+  padding: 2rem 1.125rem 0 1.125rem;
 }
 
 .overlay {
@@ -362,50 +362,50 @@ li div {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.25rem);
   z-index: 100;
 }
 
 .whatsappMessage-Header {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
 .whatsApp-icon {
-  font-size: 24px;
-  padding: 12px;
+  font-size: 1.5rem;
+  padding: 0.75rem;
   color: var(--money-color);
   background-color: #00863a63;
   border-radius: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 .whatsappMessage-Header h2 {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .whatsappMessage-Header p {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .saveDiv {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .whatsApp-num {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 #number {
-  padding: 12px 12px;
-  border-radius: 4px;
-  border: 1px solid black;
+  padding: 0.75rem 0.75rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid black;
   width: 100%;
-  margin: 4px 0;
+  margin: 0.25rem 0;
 }
 
 .errMessage {
-  font-size: 12px;
+  font-size: 0.75rem;
   display: flex;
   color: var(--low-text-color);
 }
@@ -413,35 +413,35 @@ li div {
 .whatsappBtns {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 32px;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
 }
 
 .saveWhatsappNumButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  padding: 12px;
-  border-radius: 8px;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
   background-color: var(--headlines-color);
   color: #fff;
   border: none;
 }
 
 .closeBtn {
-  padding: 12px;
-  border: 1px solid var(--lower-text-color);
-  border-radius: 8px;
+  padding: 0.75rem;
+  border: 0.0625rem solid var(--lower-text-color);
+  border-radius: 0.5rem;
   background: none;
 }
 
 .end2end {
-  font-size: 12px;
+  font-size: 0.75rem;
   text-align: center;
-  padding: 12px;
+  padding: 0.75rem;
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   align-items: center;
   justify-content: center;
 }
@@ -461,9 +461,20 @@ a:visited {
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-@media (min-width: 750px) {
+@media (min-width: 46.875em) {
   main {
     width: 50%;
     margin: 0 auto;
   }
+}
+
+@media (min-width: 115.625em) {
+  html {
+    font-size: 1.25rem;
+  }
+
+  /* main {
+    width: 50%;
+    margin: 0 auto;
+  } */
 }
