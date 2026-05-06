@@ -3,105 +3,216 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <meta name="title" content="The Work Calculator" />
-
     <meta
       name="description"
       content="Track your daily earnings effortlessly with the Work Calculator. Monitor your total progress, save data securely, and export your stats to WhatsApp in seconds."
     />
 
-    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="workCalc-Img.jpeg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
+
     <script defer src="script.js"></script>
 
     <title>Work Calculator</title>
   </head>
   <body>
-    <div class="main">
-      <h1>Welcome to work Calculator</h1>
-      <div class="inputdataList-div">
-        <!-- INPUT CONTAINER -->
-        <div>
-          <div class="dateDiv">
-            <p>Enter your work amount for Today</p>
-            <p class="todayDate">12/12/2000</p>
-          </div>
+    <header>
+      <p>WORK <span>CALCULATOR</span></p>
+    </header>
 
-          <div class="saveDiv">
-            <div>
-              <label for="amount">Enter Amount</label>
-              <input type="number" id="amount" class="input" />
-            </div>
-            <button class="saveAmountButton">SAVE</button>
-          </div>
+    <main>
+      <!-- INPUT CONTAINER -->
+      <section class="inputData section">
+        <div class="inputHeadline">
+          <h2>Earnings Calculator</h2>
 
-          <p class="message">
-            You have made <span class="totalMessage">#0</span> in total
-          </p>
-          <!-- RESET DATA BUTTON -->
-          <button class="resetBtn">RESET ALL DATA</button>
-
-          <!-- SHOW DATA LIST -->
-          <button class="listBtn">SHOW DATA LIST</button>
+          <ion-icon
+            name="calculator-outline"
+            class="calculator-icon"
+          ></ion-icon>
         </div>
 
-        <!-- DATA LIST -->
-        <ul class="listUl">
-          <!-- <li>
-            <p class="dayText">THE DAY</p>
-            <p class="amountText"># 1000</p>
-          </li>
+        <!-- INPUT CONTAINER -->
+        <div class="inputContainer">
+          <div class="unit-div">
+            <label for="unit-input" class="unit-label">Units Completed</label>
+            <input type="number" id="unit-input" placeholder="Enter quantity" />
+          </div>
+
+          <div class="amount-div">
+            <label for="amount-input">Rate Per Unit (#)</label>
+            <input type="number" id="amount-input" placeholder="Enter Rate" />
+          </div>
+
+          <div class="earningDiv">
+            <p class="earningtext">TOTAL EARNINGS (#)</p>
+            <p class="totalDayEarning">#0</p>
+          </div>
+
+          <div class="saveResetBtn-div">
+            <button class="saveAmountButton">
+              <ion-icon name="checkmark-done-outline"></ion-icon>
+              Calculate
+            </button>
+
+            <button class="resetBtn">RESET</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURRENT SESSION CONTAINER -->
+      <section class="currentSession">
+        <p class="currentSessionHeadline">CURRENT SESSION</p>
+        <div class="currentSessionBody">
+          <div class="sessionDiv">
+            <div class="dateDiv">
+              <p class="date">DATE</p>
+              <p class="todayDate">12/12/2000</p>
+            </div>
+
+            <div class="unitDiv">
+              <p class="unit">UNITS</p>
+              <p class="totalunits"><span class="unitamount">0</span> UNITS</p>
+            </div>
+          </div>
+
+          <div class="saveRecord-div">
+            <p>Calculated Earnings</p>
+            <p class="numAmount">#0</p>
+          </div>
+
+          <button class="saveRecordBtn">
+            <ion-icon name="save-outline"></ion-icon> Save Record
+          </button>
+        </div>
+      </section>
+
+      <!-- MONTHLY AMOUNT CONTAINER -->
+      <section class="monthly section">
+        <div class="month-div">
+          <p>This Month</p>
+          <p class="totalMonthlyAmount">#0</p>
+        </div>
+
+        <ion-icon
+          name="calendar-number-outline"
+          class="calender-icon"
+        ></ion-icon>
+      </section>
+
+      <!-- HOW IT WORKS SECTION -->
+      <section class="howItWorks section">
+        <div class="howitworks-Header">
+          <ion-icon name="alert-outline" class="alert-icon"></ion-icon>
+          <h2>How It Works</h2>
+        </div>
+
+        <ol>
           <li>
-            <p class="dayText">THE DAY</p>
-            <p class="amountText"># 1000</p>
+            <div>
+              <p class="num-icon">1</p>
+              <p class="protocol">Enter Production</p>
+            </div>
+            <p>Input the total units you completed during your shift.</p>
           </li>
+
           <li>
-            <p class="dayText">THE DAY</p>
-            <p class="amountText"># 1000</p>
-          </li> -->
-        </ul>
-      </div>
+            <div>
+              <p class="num-icon">2</p>
+              <p class="protocol">Set Your Rate</p>
+            </div>
+            <p>Enter the agreed payment amount per single unit produced .</p>
+          </li>
+
+          <li>
+            <div>
+              <p class="num-icon">3</p>
+              <p class="protocol">Verify Total</p>
+            </div>
+            <p>Check the calculated amunt matches your expectations.</p>
+          </li>
+
+          <li>
+            <div>
+              <p class="num-icon">4</p>
+              <p class="protocol">Save Record</p>
+            </div>
+            <p>Log the day to keep a digital history of your earnings.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- WORK HISTORY SECTION -->
+
+      <section class="history section">
+        <div class="historyHeadline">
+          <p>Work History</p>
+        </div>
+
+        <div class="historyTable">
+          <div class="historyTableHead">
+            <p>DATE</p>
+            <p>UNITS</p>
+            <p>EARNINGS</p>
+          </div>
+
+          <div class="historyBody listUi"></div>
+        </div>
+      </section>
 
       <!-- CONTACT DEVELOPER -->
-      <div class="comtactDev">
-        <a href="https://my-portfolio-eta-pink-71.vercel.app/">
+      <section class="comtactDev">
+        <a href="https://my-portfolio-eta-pink-71.vercel.app/" target="_blank">
           Contact the developer for any complaints or suggestions
         </a>
-      </div>
-    </div>
-
+      </section>
+    </main>
+  
+  
     <!-- WHATSAPP SEND MESSAGE SECTION -->
-    <div class="whatsappDiv hidden">
+    <section class="whatsappDiv hidden">
       <div class="overlay"></div>
       <div class="whatsappMessage">
-        <ion-icon class="closeBtn" name="close-outline"></ion-icon>
-        <h2>Save your progress to whatsapp to avoid Data Loss.</h2>
+      <div>
+        <div class="whatsappMessage-Header">
+          <ion-icon name="logo-whatsapp" class="whatsApp-icon"></ion-icon>
+          <h2>Sync with WhatsApp</h2>
+          <p>
+            Enter your 11-digit whatsApp number to backup your earnings data
+            securely.
+          </p>
+        </div>
 
         <div class="saveDiv">
-          <label for="number">Enter Your Whatsapp Number</label>
-          <input type="tel" id="number" class="whatsappNum" />
-          <p class="errMessage hidden">Message Error</p>
-          <button class="saveWhatsappNumButton">Save to whatsapp</button>
+          <label for="number" class="whatsApp-num">Whatsapp Number</label>
+          <input type="tel" id="number" placeholder="08012345678" />
+          <p class="errMessage">
+            !!! Must be exactly 11 digits (e.g 08012345678)
+          </p>
         </div>
 
-        <div class="note">
-          <p>
-            1. Make sure you have the whatsapp app installed on your device!!!!
-          </p>
-          <p>
-            2. Saving data to whatsapp will take a few seconds, PLEASE BE
-            PATIENT!!!!
-          </p>
+        <div class="whatsappBtns">
+          <button class="saveWhatsappNumButton">
+            Verify & Sync <ion-icon name="refresh-outline"></ion-icon>
+          </button>
+
+          <button class="closeBtn">Cancel</button>
         </div>
+
+        <p class="end2end">
+          <ion-icon name="lock-closed-outline"></ion-icon> END-TO-END ENCRYPTED
+          BACKUP
+        </p>
       </div>
-    </div>
+    </section>
+
 
     <script
       type="module"

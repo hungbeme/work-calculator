@@ -1,3 +1,19 @@
+/* Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+:root {
+  --background-color: #f8f9ff;
+  --section-colors: #ffff;
+  --headlines-color: #00236f;
+  --low-text-color: #757682;
+  --lower-text-color: #9c9da27d;
+  --money-color: #006e2f;
+  --earning-background: #eff4ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,149 +21,338 @@
 }
 
 body {
-  background-color: #f8fafc;
-  font-family: "Roboto Condensed";
+  background-color: var(--background-color);
+  font-family: "Inter";
   position: relative;
 }
 
-.main {
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.5px solid #cbdbf5;
+  padding: 24px 12px;
+  margin-bottom: 32px;
+  color: var(--headlines-color);
+  font-weight: 900;
+  font-size: 24px;
+}
+
+header span {
+  color: var(--money-color);
+}
+
+.hide-menu {
+  display: none !important;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 100px;
   padding: 12px;
+  gap: 32px;
 }
 
-h1 {
-  font-size: 32px;
-  color: #1e293b;
-  font-weight: 900;
-  margin-bottom: 40px;
+.section {
+  background-color: var(--section-colors);
+  border: 1px solid #c5c5d3;
+  border-radius: 8px;
+  padding: 24px 12px;
+  width: 100%;
 }
 
-.dateDiv,
-.saveDiv {
+.inputHeadline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  color: var(--headlines-color);
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.calculator-icon {
+  font-size: 24px;
+}
+
+.unit-div,
+.amount-div {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin: 0 auto;
-  margin-bottom: 25px;
+  text-align: start;
+  gap: 4px;
+  margin-bottom: 12px;
+  /* color: var(--low-text-color); */
 }
 
-.todayDate {
-  font-size: 22px;
-  color: #1e293b;
-}
-
-.input {
-  padding: 6px 12px;
-}
-
-button {
-  background-color: #2563eb;
-  padding: 8px 16px;
-  border: none;
+#unit-input,
+#amount-input {
+  padding: 8px 12px;
   border-radius: 4px;
-  color: #f8fafc;
+  border: 1px solid var(--lower-text-color);
 }
 
-.totalMessage {
-  color: #059669;
-  font-size: 22px;
+.earningDiv {
+  margin: 24px 0;
+  padding: 20px 32px;
+  background-color: #eff4ff;
+  border-radius: 8px;
+}
+
+.earningtext {
+  font-size: 12px;
+  color: var(--headlines-color);
+  font-weight: 600;
+}
+
+.totalDayEarning {
+  font-size: 32px;
+  color: #006e2f;
+  font-weight: 900;
+}
+
+.saveResetBtn-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.saveAmountButton {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid var(--lower-text-color);
+  border-radius: 8px;
+  background-color: var(--headlines-color);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
 }
 
 .resetBtn {
-  background-color: #ef4444;
-  margin-top: 20px;
+  width: 100%;
   padding: 8px 16px;
+  background: none;
+  border: 1px solid var(--lower-text-color);
+  border-radius: 8px;
+}
+
+/* CURRENT SESSION SECTION */
+
+.currentSession {
+  background-color: #fff;
+  border: 1px solid var(--lower-text-color);
+  border-radius: 8px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.currentSessionHeadline {
+  text-align: left;
+  padding: 8px 12px;
+  background-color: var(--headlines-color);
+  font-size: 12px;
+  color: #fff;
+}
+
+.currentSessionBody {
+  padding: 16px 12px;
+}
+
+.sessionDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: start;
+  padding-bottom: 16px;
+  border-bottom: 1px solid black;
+}
+
+.date,
+.unit {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: var(--low-text-color);
+}
+
+.todayDate,
+.totalunits {
+  font-size: 16px;
+}
+
+.saveRecord-div {
+  display: flex;
+  padding-top: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.numAmount {
+  font-size: 24px;
+  color: var(--money-color);
+  font-weight: 700;
+}
+
+.saveRecordBtn {
+  width: 100%;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--money-color);
   border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
 }
 
-.resetBtn:hover {
-  background-color: #dc2626;
+/* MONTHLY SECTION */
+
+.monthly {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-ul {
+.totalMonthlyAmount {
+  font-size: 24px;
+  color: var(--headlines-color);
+}
+
+.calender-icon {
+  font-size: 24px;
+  background-color: var(--lower-text-color);
+  color: var(--headlines-color);
+  padding: 12px;
+  border-radius: 100%;
+}
+
+/* HOW IT WORKS SECTION */
+
+.howitworks-Header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  /* text-align: center;
+  justify-content: center; */
+}
+
+.alert-icon {
+  font-size: 16px;
+  background-color: var(--headlines-color);
+  color: #fff;
+  padding: 4px;
+  border-radius: 100%;
+}
+
+.howitworks-Header h2 {
+  color: var(--headlines-color);
+}
+
+ol {
   list-style: none;
-  margin-top: 40px;
   display: flex;
   flex-direction: column;
-
-  /* gap: 10px; */
+  text-align: start;
+  gap: 16px;
 }
 
-li {
+li div {
   display: flex;
-  text-align: center;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-
-  background-color: #e6e0e0d1;
-  padding: 12px 32px;
-  border-bottom: 1px solid #1e293b;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
-.dayText {
+.num-icon {
+  padding: 3px 8px;
+  background-color: var(--headlines-color);
+  border-radius: 100%;
+  color: #fff;
+}
+
+.protocol {
   font-weight: 900;
 }
 
-.amountText {
-  font-size: 28px;
-  color: #059669;
+/* HISTORY SECTION */
+.history {
+  padding: 24px 0 0 0 !important;
 }
 
-.comtactDev {
-  margin-top: 200px;
+.historyHeadline p {
+  font-size: 20px;
+  text-align: start;
+  margin-bottom: 24px;
+  padding: 0 16px;
+  color: var(--headlines-color);
+  font-weight: 800;
 }
 
-a:link,
-a:visited {
-  text-align: center;
-  color: black;
+.historyTable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.comtactDev {
-  margin-top: 200px;
+.historyTableHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--lower-text-color);
+  padding: 8px 12px;
+  gap: 24px;
 }
 
-a:link,
-a:visited {
-  text-align: center;
-  color: black;
+.historyTableHead p {
+  font-size: 14px;
+}
+
+.historyTableBody:not(:last-child) {
+  border-bottom: 1px solid var(--lower-text-color);
+}
+.historyTableBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px;
+  gap: 10px;
 }
 
 /* SHOW DEVELOPER TAB+ */
-.hidden,
+
 .hidden {
   display: none !important;
 }
 
 .whatsappMessage {
-  display: flex;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 3rem 1rem;
   z-index: 101;
-  flex-direction: column;
-  align-items: center;
   gap: 1.5rem;
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   border-radius: 8px;
-  text-align: center;
-  background-color: #f8fafc;
+  background-color: #fff;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  padding: 32px 12px;
+  padding: 32px 18px 0 18px;
 }
 
 .overlay {
@@ -161,35 +366,104 @@ a:visited {
   z-index: 100;
 }
 
-.closeBtn {
-  position: fixed;
-  top: 10px;
-  left: 90%;
-  font-size: 25px;
+.whatsappMessage-Header {
+  margin-bottom: 32px;
+  text-align: center;
 }
 
-h2 {
-  color: red;
+.whatsApp-icon {
+  font-size: 24px;
+  padding: 12px;
+  color: var(--money-color);
+  background-color: #00863a63;
+  border-radius: 100%;
+  margin-bottom: 16px;
+}
+
+.whatsappMessage-Header h2 {
+  margin-bottom: 8px;
+}
+
+.whatsappMessage-Header p {
+  font-size: 14px;
+}
+
+.saveDiv {
+  margin-bottom: 24px;
+}
+
+.whatsApp-num {
+  font-size: 14px;
+}
+
+#number {
+  padding: 12px 12px;
+  border-radius: 4px;
+  border: 1px solid black;
+  width: 100%;
+  margin: 4px 0;
 }
 
 .errMessage {
-  font-size: smaller;
-  color: red;
+  font-size: 12px;
+  display: flex;
+  color: var(--low-text-color);
 }
 
-.note {
-  color: brown;
+.whatsappBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
 }
 
-@media (min-width: 800px) {
-  .inputdataList-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-  }
+.saveWhatsappNumButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--headlines-color);
+  color: #fff;
+  border: none;
+}
 
-  ul {
-    margin: 0;
+.closeBtn {
+  padding: 12px;
+  border: 1px solid var(--lower-text-color);
+  border-radius: 8px;
+  background: none;
+}
+
+.end2end {
+  font-size: 12px;
+  text-align: center;
+  padding: 12px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTACT DEVELOPER */
+
+a:link,
+a:visited {
+  text-align: center;
+  color: var(--headlines-color);
+}
+
+/* Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+@media (min-width: 750px) {
+  main {
+    width: 50%;
+    margin: 0 auto;
   }
 }
