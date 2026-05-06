@@ -1,4 +1,4 @@
-"use script";
+"use strict";
 
 /////////////////////////////////////////////////
 // SELECTING ELEMENTS
@@ -167,33 +167,33 @@ saveRecordBtn.addEventListener("click", function () {
   saveToWhatsappFunc();
 });
 
-const saveToWhatsappFunc = function (total) {
+const saveToWhatsappFunc = function () {
   // REMOVE HIDDEN CLASS
   whatsappDivEl.classList.remove("hidden");
-
-  ///////   SEND MESSAGE TO WHATSAPP
-  whatsappNumsaveBtn.addEventListener("click", function () {
-    // selecting element
-    const whatsappNumInput = document.querySelector("#number").value;
-
-    // CHECK THE VALUE OF INPUTTED NUMBER
-    if (whatsappNumInput.length < 10 || whatsappNumInput.length > 13) {
-      errMsg.classList.remove("hidden");
-      errMsg.style.color = "red";
-      errMsg.textContent = "Invalid number! Please enter 11 digit";
-      return;
-    } else {
-      const totalAmount = `#${updateUI()}`;
-      const checkWhatsappNumber = +whatsappNumInput;
-      const rawMsg = `SAVED AMOUNT FOR *${theDay}* is : ${totalAmount}`;
-      const encodeMsg = encodeURIComponent(rawMsg);
-
-      window.location.href = `https://api.whatsapp.com/send?phone=234${checkWhatsappNumber}&text=${encodeMsg}`;
-    }
-  });
-
-  //   CLOSE SAVE TO WHATSAPP WINDOW
-  closeBtnEl.addEventListener("click", function () {
-    whatsappDivEl.classList.add("hidden");
-  });
 };
+
+///////   SEND MESSAGE TO WHATSAPP
+whatsappNumsaveBtn.addEventListener("click", function () {
+  // selecting element
+  const whatsappNumInput = document.querySelector("#number").value;
+
+  // CHECK THE VALUE OF INPUTTED NUMBER
+  if (whatsappNumInput.length < 10 || whatsappNumInput.length > 13) {
+    errMsg.classList.remove("hidden");
+    errMsg.style.color = "red";
+    errMsg.textContent = "Invalid number! Please enter 11 digit";
+    return;
+  } else {
+    const totalAmount = `#${updateUI()}`;
+    const checkWhatsappNumber = +whatsappNumInput;
+    const rawMsg = `SAVED AMOUNT FOR *${theDay}* is : ${totalAmount}`;
+    const encodeMsg = encodeURIComponent(rawMsg);
+
+    window.location.href = `https://api.whatsapp.com/send?phone=234${checkWhatsappNumber}&text=${encodeMsg}`;
+  }
+});
+
+//   CLOSE SAVE TO WHATSAPP WINDOW
+closeBtnEl.addEventListener("click", function () {
+  whatsappDivEl.classList.add("hidden");
+});
